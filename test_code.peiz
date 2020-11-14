@@ -7,13 +7,13 @@ tb Z : _Genero
 all X
 all X cols id , nome
 
-filter X -> nome = "Test"
-filter X cols id , nome -> nome = "Assassins Creed: Odyssey"
-filter X -> ( id = 1 and nome = "Assassins Creed: Odyssey" ) or nome = "UFC 4"
+filter X -> nome = "Test1"
+filter X cols id , nome -> nome = "Test2"
+filter X -> ( id = 1 and nome = "Test3" ) or nome = "Test4"
 
 join -> X iwith Y [ X.empresa_id = Y.id ]
 join -> X iwith Y [ X.empresa_id = Y.id ] lwith Z [ X.genero_id = Z.id ]
 join cols X.id , X.nome , Y.nome -> X iwith Y [ X.empresa_id = Y.id ]
-join -> X iwith Y [ X.empresa_id = Y.id ] -> filter Y.nome = "Ubisoft"
+join -> X iwith Y [ X.empresa_id = Y.id ] -> filter Y.nome = "Test5"
 
-join cols X.id , X.nome , Y.nome , Z.nome -> X iwith Y [ X.empresa_id = Y.id ] iwith Z [ X.genero_id = Z.id ] -> filter Y.nome = "Ubisoft"
+join cols X.id , X.nome , Y.nome , Z.nome -> X iwith Y [ X.empresa_id = Y.id ] iwith Z [ X.genero_id = Z.id ] -> filter Y.nome = "Test6"
