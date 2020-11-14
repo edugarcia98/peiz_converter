@@ -60,7 +60,8 @@ os.environ['PASSWORD_SQL_SERVER'] = ''
 
 Com o ambiente devidamente configurado, basta modificar o arquivo **`test_code.peiz`** e executar o arquivo **`peiz_converter.py`** para gerar um arquivo SQL contendo todas as consultas implementadas no código PEIZ
 
-  
+
+
 
 ## Conjunto de regras da linguagem PEIZ :page_facing_up:
 
