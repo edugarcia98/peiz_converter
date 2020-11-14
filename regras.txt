@@ -1,0 +1,30 @@
+- Legenda:
+    k (keywords): db, tb, all, cols, filter, join, iwith, lwith, rwith, owith
+
+    id (identifiers): Ex.: cor, altura, X, Y
+    db (databases): Ex.: &Teste, &Sistema
+    t (tables): Ex.: _Carro, _Estacionamento
+    ti (table_identifier): Ex.: X.id, Y.cor
+
+    op (ops): :, ->
+    c (conditionals): =, !=, >, >=, <, <=
+    l (logic_operators): and, or, not
+
+    sep (separators): ,
+
+    od (opening_delimiters): (, [, {
+    cd (closing_delimiters): ), ], }
+
+======================================================================================================================================
+
+statement ::= <k> ids expr | <k join> cols_join <op ->> <id> ( joins <id> <od [> <ti> <c> <ti> <cd ]> )+ fil
+
+expr ::= <op :> ids | ( <k cols> <id> ( <sep ,> <id> )* )? <op ->>? cond_expr | @
+cond_expr ::= ( <od (>? <id> <c> factor <cd )>? <l>? )*
+
+cols_join ::= <k cols> <ti> ( <sep ,> <ti> )* | @
+joins ::= <k iwith> | <k lwith> | <k rwith> | <k owith>
+fil ::= <op ->> <k filter> ( <od (>? <ti> <c> factor <cd )>? <l>? )+ | @
+
+ids ::= <id> | <db> | <t>
+factor ::= <int> | <string> | <float>
